@@ -14,6 +14,7 @@ export default function App() {
         placeholder="userName입력"
         value={username}
         onChange={onChangeGitHubName}
+        className="userInput"
       />
       <p>{username} 깃허브 검색하기</p>
       <Link href={`/githubProfile/users/${username}`}>

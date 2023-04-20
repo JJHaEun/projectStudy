@@ -20,3 +20,17 @@ getServerSideProps와는 다르게 빌드시에 데이터를 불러온다. - 그
 ---
 
 #### getInitialProps
+
+Next의 9.3버전 이전부터 서버 사이드 데이터 패치를 위해 사용되었던 아이.
+이후 버전에서는 getServerSideProps나 getStaticProps를 사용하는것을 권장한다.
+
+둘의 차이는 getInitialProps의 경우에는 초기 랜더링 시에는 서버에서 데이터를 불러오지만, 클라이언트측 내비게이션을 사용한다면 클라이언트 측에서 데이터를 불러온다.
+getServerSideProps는 서버에서만 데이터를 불러온다
+
+---
+
+#### 😽 styled-jsx사용해보기.
+
+next에 기본적으로 적용되는 styled-jsx를 사용해 스타일링을 해보자
+단점: emotion과는 다르게 네스팅(안에 집어넣는것)이 불가능하다.
+즉, 어떤 태그 안의 태그를 선택해 스타일링 하는것이 불가능 하다는것.
