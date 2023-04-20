@@ -1,34 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### 깃허브 유저 정보 받아오기
 
-## Getting Started
+https://api.github.com/users/username
 
-First, run the development server:
+- isomorphic-unfetch 와 axios는 둘다 클라이언트와 서버의 환경 모두에서 작동한다고 한다.
+- getServerSideProps실습을 위해 이번에는 isomorphic-unfetch사용해 보도록 했다.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1.  getServerSideProps로 서버측에서 props를 받아온다.
+    - 페이지를 요청시마다 실행되며 이것을 통해 페이지로 전달해 준 데이터를 서버에서 랜더링한다.
+      서버에서 실행되니 콘솔 출력도 브라우저가 아니라 터미널에서 된다.
+2.  fetch를 사용하여 깃허브 유저 정보를 불러오는데 이 요청은 항상 에러가 발생할 경우를 대비해 try, catch로 묶어 주는 것이 좋다.
+3.  코드가 200으로 정상 작동했다면 json함수를 실행해 유저 정보 객체를 얻는다.
