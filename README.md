@@ -10,3 +10,13 @@ https://api.github.com/users/username
       서버에서 실행되니 콘솔 출력도 브라우저가 아니라 터미널에서 된다.
 2.  fetch를 사용하여 깃허브 유저 정보를 불러오는데 이 요청은 항상 에러가 발생할 경우를 대비해 try, catch로 묶어 주는 것이 좋다.
 3.  코드가 200으로 정상 작동했다면 json함수를 실행해 유저 정보 객체를 얻는다.
+
+---
+
+#### getStaticProps
+
+getServerSideProps와는 다르게 빌드시에 데이터를 불러온다. - 그리고 그 데이터를 json으로 저장해 사용하기 때문에 일관된 데이터를 보여줄 수 있다.
+
+---
+
+#### getInitialProps
