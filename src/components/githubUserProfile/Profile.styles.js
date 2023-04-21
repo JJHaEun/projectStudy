@@ -17,13 +17,13 @@ export const style = css`
   .profile-image-wrap {
     width: 100%;
     border: 1px solid #e1e4e8;
-    border-radius: 80px;
+    border-radius: 100px;
   }
 
   .profile-image-wrap .profile-image {
     display: block;
     width: 100%;
-    border-radius: 80px;
+    border-radius: 100px;
   }
   .profile-section {
     display: flex;
@@ -36,7 +36,6 @@ export const style = css`
   }
   #user-login {
     font-size: 18px;
-
     padding-bottom: 10px;
   }
   .user-bio {

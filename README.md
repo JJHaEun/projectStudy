@@ -47,3 +47,25 @@ https://api.github.com/users/${username}/repos?sort=updated&page=1&per_page=10
 
 - sort는 정렬기준을 의미. 정렬기준은 업데이트를 기준으로 함.
 - per_page는 페이지당 받게 될 레파지토리 개수
+
+---
+
+코드를 작성하면서 a태그의 target속성을 알게 되었다.
+
+#### target 속성
+
+- \_self : 연결문서를 클릭한 창에서 연다 - 기본값(default)
+- -blank : 연결문서를 새 창에서 연다
+- \_top : 가장 상위 창에서 연다.(전체 브라우저 창에서 작동..?)
+- frame name : 부모창에 iframe태그로 영역을 만들어 놓으면
+  자식창에서 링크된 내용이 부모의 iframe영역에 나타난다.
+
+frame name의 경우 iframe의 name속성의 값과 자식의 a태그의 target의 값이 동일해야한다.
+
+#### rel 속성
+
+rel => 해당 태그와의 관계를 의미한다.
+
+- noreferrer : 요청을 받는 쪽에서 해당 요청이 어디서 왔는지 알 수 없다.
+  target 속성이 \_blank인 링크를 클릭했을 시 새 탭에서 페이지가 열리는데 , 이때 window.opener 라는 자바스크립트 속성을 이용해 연쪽의 window 객체에 부분적으로 접근 할 수 있다.
+  이것을 막기위해 사용되는 rel 속성의 값중 하나이다.
