@@ -9,19 +9,21 @@ export const style = css`
   }
   .profile-box {
     width: 30%;
-    max-width: 220px;
+    max-width: 200px;
     padding-left: 15px;
     padding-top: 15px;
-    margin-right: 25px;
+    margin-right: 30px;
   }
   .profile-image-wrap {
     width: 100%;
     border: 1px solid #e1e4e8;
+    border-radius: 80px;
   }
 
   .profile-image-wrap .profile-image {
     display: block;
     width: 100%;
+    border-radius: 80px;
   }
   .profile-section {
     display: flex;
@@ -39,7 +41,7 @@ export const style = css`
   }
   .user-bio {
     padding-top: 15px;
-    font-size: 14px;
+    font-size: 12px;
   }
   .user-wrap {
     padding-top: 5px;
