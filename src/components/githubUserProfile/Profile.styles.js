@@ -12,7 +12,7 @@ export const style = css`
     max-width: 200px;
     padding-left: 15px;
     padding-top: 15px;
-    margin-right: 30px;
+    margin-right: 40px;
   }
   .profile-image-wrap {
     width: 100%;

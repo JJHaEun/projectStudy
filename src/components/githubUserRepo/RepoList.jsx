@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getDate } from "../commons/date";
+import { formatDistance } from "date-fns";
+import { styleRepos } from "./Repo.styles";
 
 export default function RepositoriesList({ user, repos }) {
   return (
@@ -16,14 +17,19 @@ export default function RepositoriesList({ user, repos }) {
             {el.description ? (
               <p className="repo-description">{el.description}</p>
             ) : (
-              <p>설명이 없습니다</p>
+              <p className="repo-description">설명이 없습니다</p>
             )}
             <p className="repo-language">
               {el.language}
-              <span className="repo-updated-at">{getDate(el.updated_at)}</span>
+              <span className="repo-updated-at">
+                {formatDistance(new Date(el.updated_at), new Date(), {
+                  addSuffix: true,
+                })}
+              </span>
             </p>
           </section>
         ))}
+      <style jsx>{styleRepos}</style>
     </>
   );
 }

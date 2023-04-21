@@ -7,7 +7,6 @@ export default function Name({ user, repos }) {
   if (user === undefined) {
     return;
   }
-  console.log(user);
   return (
     <>
       <div className="user-contents-wrap">

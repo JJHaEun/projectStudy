@@ -69,3 +69,22 @@ rel => 해당 태그와의 관계를 의미한다.
 - noreferrer : 요청을 받는 쪽에서 해당 요청이 어디서 왔는지 알 수 없다.
   target 속성이 \_blank인 링크를 클릭했을 시 새 탭에서 페이지가 열리는데 , 이때 window.opener 라는 자바스크립트 속성을 이용해 연쪽의 window 객체에 부분적으로 접근 할 수 있다.
   이것을 막기위해 사용되는 rel 속성의 값중 하나이다.
+
+---
+
+#### 날짜 형식 만들기
+
+- 일단 먼저 함수를 commons에 만들어 넣고 import해 사용해 보았다.
+- 깃허브 형식으로 a day ago처럼 만들기 위해 좀 더 쉽게 사용할 수 있는 라이브러리를 사용한다.
+- moment는 크기가 크기에 조금 가벼운 date-fns를 사용해본다.
+- date-fns는 함수형태로 필요한 함수를 import해 사용하면 된다!!
+
+🧑‍💻 사용법
+
+```js
+formatDistance(new Date(el.updated_at), new Date(), { addSuffix: true });
+```
+
+- formatDistance로 두 날짜간의 차이를 리턴해주며, addSuffix 가 true면 a day ago 형식으로 나오게 된다.
+- 첫번째 인자로는 수정된 날짜가 , 두번째 인자로는 현재 시간대가 들어가서 둘의 차이가 계산되며,
+  addSuffix로 몇 분 전 이라는것이 표현된다!!
