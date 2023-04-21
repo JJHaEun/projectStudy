@@ -1,44 +1,21 @@
 import fetch from "isomorphic-unfetch";
-import { style } from "./index.styles";
+import Profile from "../../../../src/components/Profile";
 
 export default function Name({ user }) {
-  if (user !== undefined) {
-    console.log(user);
+  if (user === undefined) {
+    return;
   }
-  return (
-    <>
-      <section className="profile-box">
-        <div className="profile-image-wrap">
-          <img
-            className="profile-image"
-            src={user.avatar_url}
-            alt={`${user.name} 프로필 이미지`}
-          />
-        </div>
-        {user ? (
-          <section className="profile-section">
-            <h2>{user.name}</h2>
-            <p>{user.login}</p>
-            <em className="user-bio">{user.bio}</em>
-          </section>
-        ) : (
-          <p>유저정보가 없습니다</p>
-        )}
-      </section>
-
-      <style jsx>{style}</style>
-    </>
-  );
+  return <Profile user={user} />;
 }
 
 export const getServerSideProps = async ({ query }) => {
   const { username } = query;
   try {
-    const res = await fetch(`https://api.github.com/users/${username}`);
-    if (res.status === 200) {
+    const userRes = await fetch(`https://api.github.com/users/${username}`);
+    if (userRes.status === 200) {
       //   console.log(res);
-      const user = await res.json();
-      console.log(user);
+      const user = await userRes.json();
+      // console.log(user);
       return { props: { user } };
     }
     return { props: {} };

@@ -8,8 +8,8 @@ export const style = css`
     font-weight: 400;
   }
   .profile-box {
-    width: 25%;
-    max-width: 200px;
+    width: 30%;
+    max-width: 220px;
     padding-left: 15px;
     padding-top: 15px;
     margin-right: 25px;
@@ -18,6 +18,7 @@ export const style = css`
     width: 100%;
     border: 1px solid #e1e4e8;
   }
+
   .profile-image-wrap .profile-image {
     display: block;
     width: 100%;
@@ -31,13 +32,31 @@ export const style = css`
     font-size: 22px;
     font-weight: 500;
   }
-  p {
+  #user-login {
     font-size: 18px;
 
-    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .user-bio {
     padding-top: 15px;
+    font-size: 14px;
+  }
+  .user-wrap {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .user-email-wrap {
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    font-size: 14px;
+  }
+  .user-location-wrap {
+    display: flex;
+    gap: 5%;
+    align-items: center;
     font-size: 14px;
   }
 `;

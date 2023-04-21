@@ -1,6 +1,11 @@
+## Next.js
+
+- 학습이유
+  - Next에 대해 잘 알고 싶어서 클론코딩을 하면서 개념을 익히기 위해 학습을 시작하게 되었다.
+
 ### 깃허브 유저 정보 받아오기
 
-https://api.github.com/users/username
+https://api.github.com/users/${username}
 
 - isomorphic-unfetch 와 axios는 둘다 클라이언트와 서버의 환경 모두에서 작동한다고 한다.
 - getServerSideProps실습을 위해 이번에는 isomorphic-unfetch사용해 보도록 했다.
@@ -34,3 +39,11 @@ getServerSideProps는 서버에서만 데이터를 불러온다
 next에 기본적으로 적용되는 styled-jsx를 사용해 스타일링을 해보자
 단점: emotion과는 다르게 네스팅(안에 집어넣는것)이 불가능하다.
 즉, 어떤 태그 안의 태그를 선택해 스타일링 하는것이 불가능 하다는것.
+따라서 특정 태그가 하나라면 태그 이름을 사용하고, 아니라면 id나 className 선택자를 주어 스타일을 적용하였다.
+
+#### 깃허브 레파지토리 불러오기
+
+https://api.github.com/users/${username}/repos?sort=updated&page=1&per_page=10
+
+- sort는 정렬기준을 의미. 정렬기준은 업데이트를 기준으로 함.
+- per_page는 페이지당 받게 될 레파지토리 개수
