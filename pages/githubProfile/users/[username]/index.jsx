@@ -1,4 +1,5 @@
 import fetch from "isomorphic-unfetch";
+import PageNationButton from "../../../../src/components/githubPageNation/pagenation";
 import Profile from "../../../../src/components/githubUserProfile/Profile";
 import Repositories from "../../../../src/components/githubUserRepo/Repo";
 import { styleUsers } from "./index.styles";
@@ -13,13 +14,14 @@ export default function Name({ user, repos }) {
         <Profile user={user} />
         <Repositories user={user} repos={repos} />
       </div>
+      <PageNationButton user={user} repos={repos} />
       <style jsx>{styleUsers}</style>
     </>
   );
 }
 
 export const getServerSideProps = async ({ query }) => {
-  const { username } = query;
+  const { username, page } = query;
   try {
     let user;
     let repos;
@@ -30,7 +32,7 @@ export const getServerSideProps = async ({ query }) => {
       // console.log(user);
     }
     const repoRes = await fetch(
-      `https://api.github.com/users/${username}/repos?sort=updated&page=1&per_page=10`
+      `https://api.github.com/users/${username}/repos?sort=updated&page=${page}&per_page=10`
     );
     if (repoRes.status === 200) {
       repos = await repoRes.json();
