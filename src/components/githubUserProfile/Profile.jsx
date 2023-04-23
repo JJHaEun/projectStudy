@@ -3,6 +3,7 @@ import { GoLocation } from "react-icons/go";
 import { style } from "./Profile.styles";
 
 export default function Profile({ user }) {
+  console.log(user);
   return (
     <>
       {user ? (

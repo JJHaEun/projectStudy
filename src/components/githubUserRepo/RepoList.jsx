@@ -7,9 +7,9 @@ export default function RepositoriesList({ user, repos }) {
     <>
       {user !== undefined &&
         repos !== undefined &&
-        repos.map((el) => (
+        repos?.map((el) => (
           <section key={el.id} className="repo-wrap">
-            <Link href={`https://github.com/${user.login}/${el.name}`}>
+            <Link href={`https://github.com/${user?.login}/${el.name}`}>
               <a target="_blank" rel="noreferrer">
                 <h2 className="repo-name">{el.name}</h2>
               </a>
