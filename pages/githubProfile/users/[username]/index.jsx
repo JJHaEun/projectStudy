@@ -27,7 +27,7 @@ export const getServerSideProps = async ({ query }) => {
     if (userRes.status === 200) {
       // console.log(res);
       user = await userRes.json();
-      console.log(user);
+      // console.log(user);
     }
     const repoRes = await fetch(
       `https://api.github.com/users/${username}/repos?sort=updated&page=${page}&per_page=10`
@@ -35,7 +35,6 @@ export const getServerSideProps = async ({ query }) => {
     if (repoRes.status === 200) {
       repos = await repoRes.json();
     }
-    // console.log(repos);
 
     return { props: { user, repos } };
   } catch (error) {

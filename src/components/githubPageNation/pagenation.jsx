@@ -3,10 +3,8 @@ import { useRouter } from "next/router";
 import { stylePageNation } from "./pagenation.styles";
 
 export default function PageNation({ user, repos }) {
-  console.log(user);
   const router = useRouter();
   const { page = "1" } = router.query;
-  console.log("page : ", page);
   return (
     <div className="repo-pagenation">
       <Link href={`/githubProfile/users/${user.name}?page=${Number(page) - 1}`}>

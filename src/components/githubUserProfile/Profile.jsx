@@ -3,7 +3,6 @@ import { GoLocation } from "react-icons/go";
 import { style } from "./Profile.styles";
 
 export default function Profile({ user }) {
-  console.log(user);
   return (
     <>
       {user ? (
@@ -21,7 +20,7 @@ export default function Profile({ user }) {
             <p id="user-login">{user.login}</p>
             <div>
               <em className="user-bio">{user.bio}</em>
-              <p className="user-wrap">
+              <span className="user-wrap">
                 <p className="user-email-wrap">
                   <GoMailRead color="#5279797c" />
                   <span>yj05037@gmail.com</span>
@@ -30,7 +29,7 @@ export default function Profile({ user }) {
                   <GoLocation color="#a1925a7b" />
                   <span>{user.location}</span>
                 </p>
-              </p>
+              </span>
             </div>
           </section>
         </section>

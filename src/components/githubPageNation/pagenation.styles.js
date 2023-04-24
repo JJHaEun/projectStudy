@@ -26,6 +26,6 @@ export const stylePageNation = css`
   .repo-pagenation button:disabled {
     color: whitesmoke;
     background: gainsboro;
-    cursor: default;
+    cursor: no-drop;
   }
 `;
