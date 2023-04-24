@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { stylePageNation } from "./pagenation.styles";
 
 export default function PageNation({ user, repos }) {
   console.log(user);
@@ -18,6 +19,7 @@ export default function PageNation({ user, repos }) {
           <button disabled={repos.length < 10}>Next</button>
         </a>
       </Link>
+      <style jsx>{stylePageNation}</style>
     </div>
   );
 }
